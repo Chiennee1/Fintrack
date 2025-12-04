@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Icon from '../components/Icon';
@@ -5,19 +6,42 @@ import Icon from '../components/Icon';
 const TransactionDetail: React.FC = () => {
   const navigate = useNavigate();
 
+  const handleDelete = () => {
+    // In a real app, this would delete the transaction
+    if (window.confirm("Bạn có chắc chắn muốn xóa giao dịch này?")) {
+      navigate('/transactions');
+    }
+  };
+
+  const handleEdit = () => {
+    // Navigate to edit page (using add-transaction for demo)
+    navigate('/add-transaction');
+  };
+
   return (
     <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display pb-24">
       <header className="sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
         <div className="flex items-center p-4 justify-between">
-          <button onClick={() => navigate(-1)} className="flex size-10 items-center justify-center rounded-full hover:bg-white/10">
+          <button 
+            onClick={() => navigate('/transactions')} 
+            className="flex size-10 items-center justify-center -ml-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+          >
             <Icon name="arrow_back_ios_new" className="text-slate-800 dark:text-white" />
           </button>
           <h1 className="text-slate-900 dark:text-white text-lg font-bold">Chi tiết Giao dịch</h1>
           <div className="flex gap-2">
-            <button className="flex size-10 items-center justify-center rounded-full hover:bg-white/10">
-                <Icon name="delete" className="text-slate-800 dark:text-white" />
+            <button 
+              onClick={handleDelete}
+              className="flex size-10 items-center justify-center rounded-full hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors"
+              title="Xóa"
+            >
+                <Icon name="delete" className="text-danger" />
             </button>
-             <button className="flex size-10 items-center justify-center rounded-full hover:bg-white/10">
+             <button 
+              onClick={handleEdit}
+              className="flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+              title="Chỉnh sửa"
+            >
                 <Icon name="edit" className="text-slate-800 dark:text-white" />
             </button>
           </div>

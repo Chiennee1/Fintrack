@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Icon from '../components/Icon';
@@ -9,7 +10,7 @@ const NotificationSettings: React.FC = () => {
     <div className="flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display">
       <header className="sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
         <div className="flex items-center p-4 justify-between">
-          <button onClick={() => navigate(-1)}>
+          <button onClick={() => navigate('/notifications')}>
              <Icon name="arrow_back_ios_new" className="text-slate-800 dark:text-white" />
           </button>
           <h1 className="text-slate-900 dark:text-white text-lg font-bold">Cài đặt Thông báo</h1>
@@ -65,6 +66,13 @@ const NotificationSettings: React.FC = () => {
                     <div>
                         <p className="font-medium text-slate-900 dark:text-white text-sm">Mặc định</p>
                         <p className="text-xs text-slate-500">Phát âm thanh nếu được phép.</p>
+                    </div>
+                </div>
+                <div className="flex gap-3">
+                    <input type="radio" name="prio" className="mt-1 text-primary focus:ring-primary" />
+                    <div>
+                        <p className="font-medium text-slate-900 dark:text-white text-sm">Không ưu tiên (Im lặng)</p>
+                        <p className="text-xs text-slate-500">Không phát âm thanh hoặc rung.</p>
                     </div>
                 </div>
              </div>

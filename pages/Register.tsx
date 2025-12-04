@@ -16,7 +16,7 @@ const Register: React.FC = () => {
       {/* Header */}
       <div className="p-4 sticky top-0 z-10 bg-background-light dark:bg-background-dark">
         <button 
-            onClick={() => navigate(-1)}
+            onClick={() => navigate('/login')}
             className="size-10 flex items-center justify-center rounded-full hover:bg-slate-200 dark:hover:bg-white/10 transition-colors"
         >
             <Icon name="arrow_back" className="text-2xl" />

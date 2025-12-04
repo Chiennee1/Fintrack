@@ -15,7 +15,7 @@ const Settings: React.FC = () => {
     <div className="flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display pb-24">
       <header className="sticky top-0 z-10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm">
         <div className="flex items-center p-4 justify-between">
-          <button onClick={() => navigate(-1)}>
+          <button onClick={() => navigate('/')}>
              <Icon name="arrow_back_ios_new" className="text-slate-800 dark:text-white" />
           </button>
           <h1 className="text-slate-900 dark:text-white text-lg font-bold">Cài đặt</h1>
